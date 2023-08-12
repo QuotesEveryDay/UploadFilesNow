@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const port = 3010;
+const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,7 +26,7 @@ app.post("/upload", async (req, res) => {
             }
 
             // Example Discord webhook URL
-            const discordWebhook = "https://discord.com/api/webhooks/1139686248496246825/blHegQ65BCmPE93qBe8tlMyE3IP6RqQStAetrBOp4Mi7kZRgV1xVNDI2d7TmDwjU5Aln";
+            const discordWebhook = "YOUR_DISCORD_WEBHOOK_URL";
 
             // Send file to Discord webhook
             const response = await axios.post(discordWebhook, {
@@ -36,10 +36,10 @@ app.post("/upload", async (req, res) => {
 
             console.log("File uploaded to Discord:", response.data);
 
-            res.json({ message: "File uploaded successfully" });
+            res.json({ message: "File uploaded and sent successfully" });
         });
     } catch (error) {
-        console.error("Error uploading file to Discord:", error);
+        console.error("Error uploading file and sending to Discord:", error);
         res.status(500).json({ message: "Error uploading file" });
     }
 });
