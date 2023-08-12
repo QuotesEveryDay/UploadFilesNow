@@ -26,7 +26,7 @@ app.post("/upload", async (req, res) => {
             }
 
             // Example Discord webhook URL
-            const discordWebhook = "YOUR_DISCORD_WEBHOOK_URL";
+            const discordWebhook = "https://discord.com/api/webhooks/1139686248496246825/blHegQ65BCmPE93qBe8tlMyE3IP6RqQStAetrBOp4Mi7kZRgV1xVNDI2d7TmDwjU5Aln";
 
             // Send file to Discord webhook
             const response = await axios.post(discordWebhook, {
